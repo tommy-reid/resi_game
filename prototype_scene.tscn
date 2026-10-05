@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://clfymobu0cdeb"]
+
+[ext_resource type="Script" uid="uid://bkyc58sp3s13g" path="res://player.gd" id="1_4jolq"]
+[ext_resource type="PackedScene" uid="uid://cnb2xwbbbkrat" path="res://Player/MaleCharacter.glb" id="1_viqiv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4jolq"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_0otln"]
+sky_material = SubResource("ProceduralSkyMaterial_4jolq")
+
+[sub_resource type="Environment" id="Environment_8me77"]
+background_mode = 2
+sky = SubResource("Sky_0otln")
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_eae6q"]
+size = Vector2(60, 60)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eae6q"]
+size = Vector3(60, 0.1, 60)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eae6q"]
+radius = 0.26757813
+height = 1.5912628
+
+[node name="PrototypeScene" type="Node3D" unique_id=492006972]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=633232567]
+environment = SubResource("Environment_8me77")
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=396513162]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=888885037]
+transform = Transform3D(0.9996035, 0, -0.028156146, 0, 1, 0, 0.028156146, 0, 0.9996035, 0, 0, 0)
+mesh = SubResource("PlaneMesh_eae6q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1980158324]
+shape = SubResource("BoxShape3D_eae6q")
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=1765820106]
+script = ExtResource("1_4jolq")
+
+[node name="MaleCharacter" parent="Player" unique_id=1584105238 instance=ExtResource("1_viqiv")]
+transform = Transform3D(-0.9834127, 0, 0.18138221, 0, 1, 0, -0.18138221, 0, -0.9834127, -0.03191924, 0.07382727, 0.12418771)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=1809089400]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12942272, 0.83230126, 0.23726529)
+shape = SubResource("CapsuleShape3D_eae6q")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1747930965]
+transform = Transform3D(-0.81276834, -0.16752464, 0.55798143, 0.45347708, -0.7831937, 0.42540154, 0.36574212, 0.59878486, 0.71252334, 1.262274, 2.7564623, 3.1523144)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1369550621]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5832148, 4.570957)
