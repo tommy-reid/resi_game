@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dk1v8j66n6n0e"
-path.s3tc="res://.godot/imported/MaleCharacter_MaleCharacter_Texture.png-cb23c307b6bf548245d51f743bbd5d25.s3tc.ctex"
+path.s3tc="res://.godot/imported/MaleCharacter_MaleCharacter_Texture.png-7fe800975832a843f8cb79a520924b92.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Player/MaleCharacter_MaleCharacter_Texture.png"
-dest_files=["res://.godot/imported/MaleCharacter_MaleCharacter_Texture.png-cb23c307b6bf548245d51f743bbd5d25.s3tc.ctex"]
+source_file="res://assets/player/MaleCharacter_MaleCharacter_Texture.png"
+dest_files=["res://.godot/imported/MaleCharacter_MaleCharacter_Texture.png-7fe800975832a843f8cb79a520924b92.s3tc.ctex"]
 
 [params]
 
