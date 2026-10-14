@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dm5bm18v228xh"]
 
-[ext_resource type="Script" uid="uid://bkyc58sp3s13g" path="res://entities/player/player.gd" id="1_dovo2"]
+[ext_resource type="Script" uid="uid://ck5aqx4muwgyh" path="res://entities/player/stephen_player.gd" id="1_abrql"]
 [ext_resource type="PackedScene" uid="uid://cnb2xwbbbkrat" path="res://assets/player/MaleCharacter.glb" id="2_gmlin"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eae6q"]
@@ -8,7 +8,7 @@ radius = 0.26757813
 height = 1.5912628
 
 [node name="Player" type="CharacterBody3D" unique_id=19033321]
-script = ExtResource("1_dovo2")
+script = ExtResource("1_abrql")
 
 [node name="MaleCharacter" parent="." unique_id=883231239 instance=ExtResource("2_gmlin")]
 transform = Transform3D(-0.9834127, 0, 0.18138221, 0, 1, 0, -0.18138221, 0, -0.9834127, -0.03191924, 0.07382727, 0.12418771)

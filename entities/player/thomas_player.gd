@@ -1,7 +1,7 @@
 class_name Player extends CharacterBody3D
 
 @export_group("Movement Settings")
-@export var turn_speed := 180.0
+@export var turn_speed := 100.0
 @export var quick_turn_speed := 0.3
 @export var walk_speed := 80.0
 @export var run_speed := 280.0
