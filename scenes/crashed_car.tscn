@@ -2,7 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://gxw56ffkpmf8" path="res://assets/textures/O5GLMQ0.jpg" id="1_0vgxq"]
 [ext_resource type="PackedScene" uid="uid://dm5bm18v228xh" path="res://entities/player/player.tscn" id="2_hq1pd"]
+[ext_resource type="Shader" uid="uid://qyecyqnsow3p" path="res://assets/shaders/psx_models.gdshader" id="3_f4vqn"]
 [ext_resource type="PackedScene" uid="uid://dqw6o3r8p4uxj" path="res://entities/camera/camera.tscn" id="3_nwuim"]
+[ext_resource type="PackedScene" uid="uid://c5dox5ucbhp1e" path="res://assets/shaders/psx_post_process.tscn" id="4_hq1pd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0vgxq"]
 
@@ -18,6 +20,10 @@ uv1_world_triplanar = true
 [sub_resource type="BoxMesh" id="BoxMesh_p3owy"]
 material = SubResource("StandardMaterial3D_y32jy")
 size = Vector3(0.68, 1, 0.39999998)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_72snx"]
+render_priority = 0
+shader = ExtResource("3_f4vqn")
 
 [node name="Main" type="Node3D" unique_id=1400231522]
 
@@ -96,6 +102,7 @@ mesh = SubResource("BoxMesh_p3owy")
 [node name="Car" type="CSGBox3D" parent="Map" unique_id=512793099]
 transform = Transform3D(5.9519997, 0, 0, 0, 1.7495451, 1.0520271, 0, -0.63678247, 2.8904216, -1.1000001, 0.9000001, -4.4)
 use_collision = true
+material = SubResource("ShaderMaterial_72snx")
 
 [node name="Walls" type="CSGCombiner3D" parent="Map" unique_id=1081791270]
 transform = Transform3D(8.58, 0, 0, 0, 1, 0, 0, 0, 0.099999964, 0.05000019, 0.5, -41.3)
@@ -123,6 +130,8 @@ size = Vector3(3.02, 1, 1)
 transform = Transform3D(-0.8127679, -0.1675253, 0.5579818, 0.45347688, -0.78319323, 0.42540225, 0.36574194, 0.5987851, 0.71252316, 27.412119, 16.516357, 3.728156)
 light_color = Color(0.5609549, 0.5609549, 0.5609549, 1)
 sky_mode = 1
+
+[node name="CanvasLayer" parent="." unique_id=2144235555 instance=ExtResource("4_hq1pd")]
 
 [editable path="Camera/CarOutwardLeft"]
 [editable path="Camera/CarOutwardBack"]
