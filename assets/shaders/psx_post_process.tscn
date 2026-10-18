@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c5dox5ucbhp1e"]
+
+[ext_resource type="Shader" uid="uid://d11kba7evco5q" path="res://assets/shaders/psx_post_process.gdshader" id="1_72snx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p3owy"]
+shader = ExtResource("1_72snx")
+
+[node name="PsxPostProcess" type="CanvasLayer" unique_id=2144235555]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1173982772]
+material = SubResource("ShaderMaterial_p3owy")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

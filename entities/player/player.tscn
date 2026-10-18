@@ -1,7 +1,57 @@
 [gd_scene format=3 uid="uid://dm5bm18v228xh"]
 
-[ext_resource type="Script" uid="uid://ck5aqx4muwgyh" path="res://entities/player/stephen_player.gd" id="1_abrql"]
+[ext_resource type="Script" uid="uid://cmyb0wl31fj67" path="res://entities/player/stephen_player.gd" id="1_abrql"]
 [ext_resource type="PackedScene" uid="uid://cnb2xwbbbkrat" path="res://assets/models/player/MaleCharacter.glb" id="2_gmlin"]
+[ext_resource type="Shader" uid="uid://chnjaa2h3jl7t" path="res://assets/shaders/psx_models.gdshader" id="3_bls4j"]
+[ext_resource type="Texture2D" uid="uid://dk1v8j66n6n0e" path="res://assets/models/player/MaleCharacter_MaleCharacter_Texture.png" id="4_fkugw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_26q78"]
+render_priority = 0
+shader = ExtResource("3_bls4j")
+shader_parameter/albedo_textrue = ExtResource("4_fkugw")
+shader_parameter/texture_tile = Vector2(1, 1)
+shader_parameter/snap_enabled = true
+shader_parameter/snap_resolution = 148.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qiwj3"]
+render_priority = 0
+shader = ExtResource("3_bls4j")
+shader_parameter/albedo_textrue = ExtResource("4_fkugw")
+shader_parameter/texture_tile = Vector2(1, 1)
+shader_parameter/snap_enabled = true
+shader_parameter/snap_resolution = 148.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8fjmc"]
+render_priority = 0
+shader = ExtResource("3_bls4j")
+shader_parameter/albedo_textrue = ExtResource("4_fkugw")
+shader_parameter/texture_tile = Vector2(1, 1)
+shader_parameter/snap_enabled = true
+shader_parameter/snap_resolution = 148.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fkugw"]
+render_priority = 0
+shader = ExtResource("3_bls4j")
+shader_parameter/albedo_textrue = ExtResource("4_fkugw")
+shader_parameter/texture_tile = Vector2(1, 1)
+shader_parameter/snap_enabled = true
+shader_parameter/snap_resolution = 148.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bls4j"]
+render_priority = 0
+shader = ExtResource("3_bls4j")
+shader_parameter/albedo_textrue = ExtResource("4_fkugw")
+shader_parameter/texture_tile = Vector2(1, 1)
+shader_parameter/snap_enabled = true
+shader_parameter/snap_resolution = 148.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_abrql"]
+render_priority = 0
+shader = ExtResource("3_bls4j")
+shader_parameter/albedo_textrue = ExtResource("4_fkugw")
+shader_parameter/texture_tile = Vector2(1, 1)
+shader_parameter/snap_enabled = true
+shader_parameter/snap_resolution = 148.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eae6q"]
 radius = 0.26757813
@@ -1149,7 +1199,7 @@ script = ExtResource("1_abrql")
 [node name="MaleCharacter" parent="." unique_id=883231239 instance=ExtResource("2_gmlin")]
 transform = Transform3D(-0.9834127, 0, 0.18138221, 0, 1, 0, -0.18138221, 0, -0.9834127, -0.03191924, 0.07382727, 0.12418771)
 
-[node name="Skeleton3D" parent="MaleCharacter/rig" parent_id_path=PackedInt32Array(883231239, 991027547) index="0" unique_id=690867088]
+[node name="Skeleton3D" parent="MaleCharacter/rig" parent_id_path=PackedInt32Array(883231239, 851752966) index="0" unique_id=148584462]
 bones/6/position = Vector3(-0.0004237402, 0.17715415, -0.014583822)
 bones/6/rotation = Quaternion(-0.39578265, 0.6255665, -0.39808586, 0.54180294)
 bones/6/scale = Vector3(1.0000017, 1.0000023, 1.0000024)
@@ -1172,8 +1222,27 @@ bones/22/rotation = Quaternion(0.90587795, 0.019537779, 0.018503025, 0.42268336)
 bones/22/scale = Vector3(1.000001, 0.9999998, 1.0000001)
 bones/23/rotation = Quaternion(-0.02235833, -0.0077429493, -0.017427476, 0.9995681)
 
+[node name="Arm_Left" parent="MaleCharacter/rig/Skeleton3D" index="0" unique_id=612152844]
+material_override = SubResource("ShaderMaterial_26q78")
+
+[node name="Arm_Right" parent="MaleCharacter/rig/Skeleton3D" index="1" unique_id=797417744]
+material_override = SubResource("ShaderMaterial_qiwj3")
+
+[node name="Body" parent="MaleCharacter/rig/Skeleton3D" index="2" unique_id=1189450948]
+material_override = SubResource("ShaderMaterial_8fjmc")
+
+[node name="Boots" parent="MaleCharacter/rig/Skeleton3D" index="3" unique_id=256841494]
+material_override = SubResource("ShaderMaterial_fkugw")
+
+[node name="Boots_001" parent="MaleCharacter/rig/Skeleton3D" index="4" unique_id=1363611758]
+material_override = SubResource("ShaderMaterial_bls4j")
+
+[node name="Head" parent="MaleCharacter/rig/Skeleton3D" index="5" unique_id=1644692373]
+material_override = SubResource("ShaderMaterial_abrql")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1176464681]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12942272, 0.83230126, 0.23726529)
+visible = false
 shape = SubResource("CapsuleShape3D_eae6q")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2112171388]
