@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://b3p8mo1sf4772"]
+
+[ext_resource type="PackedScene" uid="uid://dm5bm18v228xh" path="res://entities/player/player.tscn" id="1_ikdcd"]
+[ext_resource type="Texture2D" uid="uid://gxw56ffkpmf8" path="res://assets/textures/O5GLMQ0.jpg" id="1_y32jy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y32jy"]
+albedo_texture = ExtResource("1_y32jy")
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.4640863
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_p3owy"]
+material = SubResource("StandardMaterial3D_y32jy")
+
+[node name="Main" type="Node3D" unique_id=1400231522]
+
+[node name="Map" type="Node3D" parent="." unique_id=543538475]
+
+[node name="Floor" type="MeshInstance3D" parent="Map" unique_id=4948112]
+transform = Transform3D(66.66039, 0, 0, 0, 1, 0, 0, 0, 83.813614, 0.013151526, -0.43344253, 0.10653806)
+mesh = SubResource("BoxMesh_p3owy")
+
+[node name="Car" type="CSGBox3D" parent="Map" unique_id=512793099]
+transform = Transform3D(5.9519997, 0, 0, 0, 1.7495451, 1.0520271, 0, -0.63678247, 2.8904216, -1.1000001, 0.9000001, -4.4)
+use_collision = true
+
+[node name="Walls" type="CSGCombiner3D" parent="Map" unique_id=1081791270]
+transform = Transform3D(8.58, 0, 0, 0, 1, 0, 0, 0, 0.099999964, 0.05000019, 0.5, -41.3)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Map/Walls" unique_id=1169974846]
+size = Vector3(7.7000003, 1, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Map/Walls" unique_id=191344563]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 828.00037)
+size = Vector3(7.7000003, 1, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Map/Walls" unique_id=1002586160]
+transform = Transform3D(-5.6824803e-08, 0, 0.0116550075, 0, 1, 0, -111.54004, 0, -4.371139e-08, -3.8344991, 0, 404.00018)
+size = Vector3(7.7000003, 1, 1)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Map/Walls" unique_id=1708562027]
+transform = Transform3D(-5.6824803e-08, 0, 0.0116550075, 0, 1, 0, -111.54004, 0, -4.371139e-08, 3.776224, 0, 404.00018)
+size = Vector3(7.7000003, 1, 1)
+
+[node name="Player" parent="." unique_id=19033321 instance=ExtResource("1_ikdcd")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1005089507]
+transform = Transform3D(-0.8127679, -0.1675253, 0.5579818, 0.45347688, -0.78319323, 0.42540225, 0.36574194, 0.5987851, 0.71252316, 27.412119, 16.516357, 3.728156)
+light_color = Color(0.5609549, 0.5609549, 0.5609549, 1)
+sky_mode = 1
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=731577683]
+transform = Transform3D(0.4776531, 0.37676966, 0.79365754, -0.10190529, 0.9210362, -0.37590918, -0.87261844, 0.09867628, 0.47833058, 7.6119804, 0.104964495, 1.3770142)
+fov = 90.607

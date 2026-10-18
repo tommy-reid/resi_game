@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 var walk_speed: float = 1.8
-var run_speed: float = 3.0
+var run_speed: float = 3.5
 var backpedal_multiplier: float = 0.5
 var acceleration: float = 10.0
 var deceleration: float = 50.0
