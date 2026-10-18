@@ -1,23 +1,98 @@
 [gd_scene format=3 uid="uid://b3p8mo1sf4772"]
 
-[ext_resource type="PackedScene" uid="uid://dm5bm18v228xh" path="res://entities/player/player.tscn" id="1_ikdcd"]
-[ext_resource type="Texture2D" uid="uid://gxw56ffkpmf8" path="res://assets/textures/O5GLMQ0.jpg" id="1_y32jy"]
+[ext_resource type="Texture2D" uid="uid://gxw56ffkpmf8" path="res://assets/textures/O5GLMQ0.jpg" id="1_0vgxq"]
+[ext_resource type="PackedScene" uid="uid://dm5bm18v228xh" path="res://entities/player/player.tscn" id="2_hq1pd"]
+[ext_resource type="PackedScene" uid="uid://dqw6o3r8p4uxj" path="res://entities/camera/camera.tscn" id="3_nwuim"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0vgxq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hq1pd"]
+size = Vector3(8, 1, 7)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y32jy"]
-albedo_texture = ExtResource("1_y32jy")
+albedo_texture = ExtResource("1_0vgxq")
 uv1_triplanar = true
 uv1_triplanar_sharpness = 1.4640863
 uv1_world_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_p3owy"]
 material = SubResource("StandardMaterial3D_y32jy")
+size = Vector3(0.68, 1, 0.39999998)
 
 [node name="Main" type="Node3D" unique_id=1400231522]
+
+[node name="Camera" type="Node3D" parent="." unique_id=1313557304]
+transform = Transform3D(-4.875568e-07, 0, 0.099999964, 0, 1, 0, -11.154, 0, -4.3711372e-09, 32.45, 0.5, -0.8999939)
+
+[node name="CarOutwardLeft" parent="Camera" unique_id=1911670378 node_paths=PackedStringArray("player") instance=ExtResource("3_nwuim")]
+transform = Transform3D(-8.703092e-07, 0, 0.08965394, 0, 1, 0, -10.000004, 0, 4.2927624e-07, -0.4482716, 3.6, -353.50012)
+follow_player = true
+player = NodePath("../../Player")
+
+[node name="Trigger" parent="Camera/CarOutwardLeft" index="0" unique_id=489662334]
+transform = Transform3D(-16.5, 0, -9.75114e-06, 0, 1, 0, 0.00016089382, 0, -1, -2.899979, -4.7683716e-07, 6.000029)
+top_level = true
+
+[node name="CollisionShape3D" parent="Camera/CarOutwardLeft/Trigger" index="0" unique_id=1862037614]
+transform = Transform3D(8.120001, 0, 0, 0, 1, 0, 0, 0, 6.9299994, -2.1000001, 0.099999994, -1.5)
+
+[node name="CarLeft" parent="Camera" unique_id=1408015721 node_paths=PackedStringArray("player") instance=ExtResource("3_nwuim")]
+transform = Transform3D(-4.371139e-07, 0, -0.09, 0, 1, 0, 10, 0, -3.934025e-09, -0.448269, 1.5999999, -324.50012)
+player = NodePath("../../Player")
+
+[node name="Trigger" parent="Camera/CarLeft" index="0" unique_id=489662334]
+transform = Transform3D(1, 0, 0, 0, 1.299, 0, 0, 0, 1.299, 0.504, -1.7, -2.3)
+
+[node name="CollisionShape3D" parent="Camera/CarLeft/Trigger" index="0" unique_id=1862037614]
+transform = Transform3D(6.0697002, 0, 0, 0, 1, 0, 0, 0, 6.9299994, -1.65137, 0.099999994, -1.5)
+
+[node name="CarRight" parent="Camera" unique_id=467180408 node_paths=PackedStringArray("player") instance=ExtResource("3_nwuim")]
+transform = Transform3D(-0.030663459, 0, 0.08424714, 0, 1, 0, -9.39693, 0, -3.4202032, 1.1386056, 1.5999999, -352.80014)
+player = NodePath("../../Player")
+
+[node name="Trigger" parent="Camera/CarRight" index="0" unique_id=489662334]
+transform = Transform3D(1.4419584, 0, -0.3420201, 0, 1, 0, 0.52483, 0, 0.9396926, -0.7299988, -1.7, -2.300002)
+
+[node name="CollisionShape3D" parent="Camera/CarRight/Trigger" index="0" unique_id=1862037614]
+transform = Transform3D(8.120001, 0, 0, 0, 1, 0, 0, 0, 6.9299994, -2.1000001, 0.099999994, -1.5)
+
+[node name="CarFront" parent="Camera" unique_id=1881431222 node_paths=PackedStringArray("player") instance=ExtResource("3_nwuim")]
+transform = Transform3D(0.08965394, 1.959449e-09, 5.250329e-10, -2.1855694e-08, 0.8660254, 0.5, 5.8562136e-08, -5.000002, 8.660257, 0.34965095, 3.5, -343.8001)
+player = NodePath("../../Player")
+
+[node name="Trigger" parent="Camera/CarFront" index="0" unique_id=489662334]
+transform = Transform3D(2.173875, -2.1855694e-08, 5.856215e-09, 4.751154e-08, 0.8660254, -0.5, 1.2730695e-08, 0.5, 0.8660254, 4.5700006, -1.1892302, -5.5846763)
+
+[node name="CollisionShape3D" parent="Camera/CarFront/Trigger" index="0" unique_id=1862037614]
+transform = Transform3D(8.120001, 0, 0, 0, 1, 0, 0, 0, 6.9299994, -2.1000001, 0.099999994, -1.5)
+
+[node name="CarOutwardBack" parent="Camera" unique_id=1860671384 node_paths=PackedStringArray("player") instance=ExtResource("3_nwuim")]
+transform = Transform3D(-0.1384741, -0.1786365, -0.41413075, -0.016410165, 0.9261382, -0.37678623, 4.6970983, 3.4153707, 8.127613, -0.33171895, -0.20000005, -236.50008)
+follow_player = true
+player = NodePath("../../Player")
+
+[node name="Trigger" parent="Camera/CarOutwardBack" index="0" unique_id=489662334]
+transform = Transform3D(0.7433878, 0.12789153, -0.6565212, -0.07109957, 0.991097, 0.112563044, 0.6650722, -0.036998935, 0.74586153, 13.74424, -0.27220035, 3.2612352)
+top_level = true
+
+[node name="CollisionShape3D" parent="Camera/CarOutwardBack/Trigger" index="0" unique_id=1862037614]
+transform = Transform3D(0.8356239, 0, 7.5501347, 0, 1, 0, -0.9958577, 0, 6.335315, -6.7871017, 0, -1.0043225)
+shape = SubResource("BoxShape3D_0vgxq")
+
+[node name="CarBack" parent="Camera" unique_id=227005145 node_paths=PackedStringArray("player") instance=ExtResource("3_nwuim")]
+transform = Transform3D(0.079125345, -0.0146293705, -0.039534684, -0.018028334, 0.9254166, -0.3785224, 4.698467, 3.4202032, 8.1379795, -0.33171895, -0.20000005, -236.50008)
+player = NodePath("../../Player")
+
+[node name="Trigger" parent="Camera/CarBack" index="0" unique_id=489662334]
+transform = Transform3D(0.8532683, -0.008262113, 0.52140665, -0.19399177, 0.92308384, 0.33208948, -0.4840458, -0.38451004, 0.7860355, 1.8855352, -1.7210605, -4.297477)
+
+[node name="CollisionShape3D" parent="Camera/CarBack/Trigger" index="0" unique_id=1862037614]
+shape = SubResource("BoxShape3D_hq1pd")
 
 [node name="Map" type="Node3D" parent="." unique_id=543538475]
 
 [node name="Floor" type="MeshInstance3D" parent="Map" unique_id=4948112]
-transform = Transform3D(66.66039, 0, 0, 0, 1, 0, 0, 0, 83.813614, 0.013151526, -0.43344253, 0.10653806)
+transform = Transform3D(66.66039, 0, 0, 0, 1, 0, 0, 0, 83.813614, -0.65345335, -0.43344253, -5.760415)
 mesh = SubResource("BoxMesh_p3owy")
 
 [node name="Car" type="CSGBox3D" parent="Map" unique_id=512793099]
@@ -26,29 +101,34 @@ use_collision = true
 
 [node name="Walls" type="CSGCombiner3D" parent="Map" unique_id=1081791270]
 transform = Transform3D(8.58, 0, 0, 0, 1, 0, 0, 0, 0.099999964, 0.05000019, 0.5, -41.3)
+use_collision = true
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Map/Walls" unique_id=1169974846]
-size = Vector3(7.7000003, 1, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07999966, 0, 193.80005)
+size = Vector3(5.2799997, 1, 1)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Map/Walls" unique_id=191344563]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 828.00037)
-size = Vector3(7.7000003, 1, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07999994, 0, 524.80035)
+size = Vector3(5.2999997, 1, 1)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Map/Walls" unique_id=1002586160]
-transform = Transform3D(-5.6824803e-08, 0, 0.0116550075, 0, 1, 0, -111.54004, 0, -4.371139e-08, -3.8344991, 0, 404.00018)
-size = Vector3(7.7000003, 1, 1)
+transform = Transform3D(-5.6824803e-08, 0, 0.0116550075, 0, 1, 0, -111.54005, 0, -4.371139e-08, -2.7062943, 0, 356.5957)
+size = Vector3(2.99, 1, 1)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Map/Walls" unique_id=1708562027]
-transform = Transform3D(-5.6824803e-08, 0, 0.0116550075, 0, 1, 0, -111.54004, 0, -4.371139e-08, 3.776224, 0, 404.00018)
-size = Vector3(7.7000003, 1, 1)
+transform = Transform3D(-5.6824803e-08, 0, 0.0116550075, 0, 1, 0, -111.54005, 0, -4.371139e-08, 2.4685323, 0, 358.26877)
+size = Vector3(3.02, 1, 1)
 
-[node name="Player" parent="." unique_id=19033321 instance=ExtResource("1_ikdcd")]
+[node name="Player" parent="." unique_id=19033321 instance=ExtResource("2_hq1pd")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1005089507]
 transform = Transform3D(-0.8127679, -0.1675253, 0.5579818, 0.45347688, -0.78319323, 0.42540225, 0.36574194, 0.5987851, 0.71252316, 27.412119, 16.516357, 3.728156)
 light_color = Color(0.5609549, 0.5609549, 0.5609549, 1)
 sky_mode = 1
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=731577683]
-transform = Transform3D(0.4776531, 0.37676966, 0.79365754, -0.10190529, 0.9210362, -0.37590918, -0.87261844, 0.09867628, 0.47833058, 7.6119804, 0.104964495, 1.3770142)
-fov = 90.607
+[editable path="Camera/CarOutwardLeft"]
+[editable path="Camera/CarLeft"]
+[editable path="Camera/CarRight"]
+[editable path="Camera/CarFront"]
+[editable path="Camera/CarOutwardBack"]
+[editable path="Camera/CarBack"]

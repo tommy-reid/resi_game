@@ -8,6 +8,7 @@ radius = 0.26757813
 height = 1.5912628
 
 [node name="Player" type="CharacterBody3D" unique_id=19033321]
+collision_layer = 5
 script = ExtResource("1_abrql")
 
 [node name="MaleCharacter" parent="." unique_id=883231239 instance=ExtResource("2_gmlin")]
