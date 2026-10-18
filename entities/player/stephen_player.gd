@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name Player extends CharacterBody3D
 
 var walk_speed: float = 1.8
 var run_speed: float = 3.5

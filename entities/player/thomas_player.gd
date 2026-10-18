@@ -1,4 +1,4 @@
-class_name Player extends CharacterBody3D
+class_name ThomasPlayer extends CharacterBody3D
 
 @export_group("Movement Settings")
 @export var turn_speed := 100.0

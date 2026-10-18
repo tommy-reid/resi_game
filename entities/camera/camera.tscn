@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dqw6o3r8p4uxj"]
+
+[ext_resource type="Script" uid="uid://8jmuuh6n4d0" path="res://entities/camera/camera.gd" id="1_y2wxd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p3owy"]
+
+[node name="Camera" type="Camera3D" unique_id=1911670378 groups=["camera"]]
+script = ExtResource("1_y2wxd")
+
+[node name="Trigger" type="Area3D" parent="." unique_id=489662334]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger" unique_id=1862037614]
+shape = SubResource("BoxShape3D_p3owy")
+
+[connection signal="body_entered" from="Trigger" to="." method="_on_trigger_body_entered"]
