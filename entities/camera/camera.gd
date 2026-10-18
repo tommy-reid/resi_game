@@ -3,6 +3,10 @@ class_name Camera extends Camera3D
 @export var follow_player: bool = false
 @export var player: Player
 
+func _ready() -> void:
+	if follow_player:
+		var area = $Trigger
+		area.top_level = true
 
 func _physics_process(delta: float) -> void:
 	if follow_player and player:

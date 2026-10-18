@@ -30,11 +30,22 @@ follow_player = true
 player = NodePath("../../Player")
 
 [node name="Trigger" parent="Camera/CarOutwardLeft" index="0" unique_id=489662334]
-transform = Transform3D(-16.5, 0, -9.75114e-06, 0, 1, 0, 0.00016089382, 0, -1, -2.899979, -4.7683716e-07, 6.000029)
-top_level = true
+transform = Transform3D(16.5, 0, 0, 0, 1, 0, 0, 0, 1, -2.3841858e-07, -4.1000004, -1.9000001)
 
 [node name="CollisionShape3D" parent="Camera/CarOutwardLeft/Trigger" index="0" unique_id=1862037614]
 transform = Transform3D(8.120001, 0, 0, 0, 1, 0, 0, 0, 6.9299994, -2.1000001, 0.099999994, -1.5)
+
+[node name="CarOutwardBack" parent="Camera" unique_id=1860671384 node_paths=PackedStringArray("player") instance=ExtResource("3_nwuim")]
+transform = Transform3D(-0.08577084, -0.00757765, -0.024975311, -0.010164453, 0.96603936, -0.25819275, 2.9093816, -2.441804, -9.250586, -0.33171898, -0.20000005, -236.50008)
+follow_player = true
+player = NodePath("../../Player")
+
+[node name="Trigger" parent="Camera/CarOutwardBack" index="0" unique_id=489662334]
+transform = Transform3D(0.85326827, -0.008262105, 0.52140653, -0.19399178, 0.92308384, 0.33208945, -0.48404586, -0.38451004, 0.7860354, 1.8855352, -1.7210602, -4.297477)
+
+[node name="CollisionShape3D" parent="Camera/CarOutwardBack/Trigger" index="0" unique_id=1862037614]
+transform = Transform3D(0.8356239, 0, 7.5501347, 0, 1, 0, -0.9958577, 0, 6.335315, -6.7871017, 0, -1.0043225)
+shape = SubResource("BoxShape3D_0vgxq")
 
 [node name="CarLeft" parent="Camera" unique_id=1408015721 node_paths=PackedStringArray("player") instance=ExtResource("3_nwuim")]
 transform = Transform3D(-4.371139e-07, 0, -0.09, 0, 1, 0, 10, 0, -3.934025e-09, -0.448269, 1.5999999, -324.50012)
@@ -65,19 +76,6 @@ transform = Transform3D(2.173875, -2.1855694e-08, 5.856215e-09, 4.751154e-08, 0.
 
 [node name="CollisionShape3D" parent="Camera/CarFront/Trigger" index="0" unique_id=1862037614]
 transform = Transform3D(8.120001, 0, 0, 0, 1, 0, 0, 0, 6.9299994, -2.1000001, 0.099999994, -1.5)
-
-[node name="CarOutwardBack" parent="Camera" unique_id=1860671384 node_paths=PackedStringArray("player") instance=ExtResource("3_nwuim")]
-transform = Transform3D(-0.1384741, -0.1786365, -0.41413075, -0.016410165, 0.9261382, -0.37678623, 4.6970983, 3.4153707, 8.127613, -0.33171895, -0.20000005, -236.50008)
-follow_player = true
-player = NodePath("../../Player")
-
-[node name="Trigger" parent="Camera/CarOutwardBack" index="0" unique_id=489662334]
-transform = Transform3D(0.7433878, 0.12789153, -0.6565212, -0.07109957, 0.991097, 0.112563044, 0.6650722, -0.036998935, 0.74586153, 13.74424, -0.27220035, 3.2612352)
-top_level = true
-
-[node name="CollisionShape3D" parent="Camera/CarOutwardBack/Trigger" index="0" unique_id=1862037614]
-transform = Transform3D(0.8356239, 0, 7.5501347, 0, 1, 0, -0.9958577, 0, 6.335315, -6.7871017, 0, -1.0043225)
-shape = SubResource("BoxShape3D_0vgxq")
 
 [node name="CarBack" parent="Camera" unique_id=227005145 node_paths=PackedStringArray("player") instance=ExtResource("3_nwuim")]
 transform = Transform3D(0.079125345, -0.0146293705, -0.039534684, -0.018028334, 0.9254166, -0.3785224, 4.698467, 3.4202032, 8.1379795, -0.33171895, -0.20000005, -236.50008)
@@ -127,8 +125,8 @@ light_color = Color(0.5609549, 0.5609549, 0.5609549, 1)
 sky_mode = 1
 
 [editable path="Camera/CarOutwardLeft"]
+[editable path="Camera/CarOutwardBack"]
 [editable path="Camera/CarLeft"]
 [editable path="Camera/CarRight"]
 [editable path="Camera/CarFront"]
-[editable path="Camera/CarOutwardBack"]
 [editable path="Camera/CarBack"]
