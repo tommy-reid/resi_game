@@ -1118,19 +1118,15 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yqrof"]
 xfade_time = 0.5
-advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3wlsy"]
 xfade_time = 0.5
-advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b2kln"]
 xfade_time = 0.5
-advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_we0b7"]
 xfade_time = 0.5
-advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_eae6q"]
 states/aim_direction/node = SubResource("AnimationNodeBlendSpace1D_a1qjk")
